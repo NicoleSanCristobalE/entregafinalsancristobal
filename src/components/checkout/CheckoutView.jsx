@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore";
+// import { useLoading } from "../../context/LoadingContext";
 
 export default function CheckoutView() {
     const { cart, totalPrice, clearCart } = useCartContext();
     const [buyer, setBuyer] = useState({ name: "", phone: "", email: "", confirmEmail: "" });
     const [orderId, setOrderId] = useState(null);
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -54,6 +56,7 @@ export default function CheckoutView() {
             clearCart();
         } catch (error) {
             console.error("Error al crear la orden:", error);
+        }finally {
         }
     };
 

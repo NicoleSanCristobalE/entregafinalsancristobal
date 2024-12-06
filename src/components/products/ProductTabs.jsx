@@ -16,21 +16,27 @@ export default function ProductTabs({ description, features, ingredients }) {
                     id="description"
                     role="tabpanel"
                     aria-labelledby="description-tab">
-                    <p>{description || "Sin descripción disponible."}</p>
+                    <div className="tab-text">
+                        <p>{description || "Sin descripción disponible."}</p>
+                    </div>
                 </div>
                 <div
                     className="tab-pane fade"
                     id="features"
                     role="tabpanel"
                     aria-labelledby="features-tab">
-                    <p>{features || "Sin características disponibles."}</p>
+                    <div className="tab-text">
+                        <p>{features || "Sin características disponibles."}</p>
+                    </div>
                 </div>
                 <div
                     className="tab-pane fade"
                     id="ingredients"
                     role="tabpanel"
                     aria-labelledby="ingredients-tab">
-                    <p>{ingredients || "Sin ingredientes disponibles."}</p>
+                    <div className="tab-text">
+                        <p>{ingredients || "Sin ingredientes disponibles."}</p>
+                    </div>
                 </div>
             </div>
         </div>

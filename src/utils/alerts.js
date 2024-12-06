@@ -23,14 +23,14 @@ export const alertDecision = (titulo, texto) => {
     });
 };
 
-export const alertAutoDismiss = (texto, icono) => {
+export const alertAutoDismiss = (texto) => {
     Swal.fire({
-        icon: icono, 
         text: texto,
         timer: 2000, 
         timerProgressBar: true,
         showConfirmButton: false, 
         position: "top-end", 
+        width: 20,
         toast: true, 
     });
 };

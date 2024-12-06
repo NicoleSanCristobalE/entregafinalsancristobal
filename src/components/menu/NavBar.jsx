@@ -4,13 +4,15 @@ import CartWidget from "../cart/CartWidget";
 import { Link } from 'react-router-dom';
 import { alertInfo } from '../../utils/alerts';
 import { getCategories } from '../../database/categories';
+import { useLoading } from "../../context/LoadingContext";
 import "./NavBar.css";
-
 
 export default function NavBar() {
     const [categorias, setCategorias] = useState([]);
+    const { setLoading } = useLoading();
 
     useEffect(() => {
+        setLoading(true);
         const fetchCategories = async() => {
             try{
                 const lista = await getCategories();
@@ -21,10 +23,12 @@ export default function NavBar() {
                 }
             }catch(error){
                 alertInfo('error', 'Función categorías', 'error: ' + error);
+            }finally {
+                setLoading(false);
             }
         };
         fetchCategories();
-    }, []);
+    }, [setLoading]);
 
 
     return (

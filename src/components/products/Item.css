@@ -17,7 +17,7 @@
 /* Contenedor de tabs con scroll */
 .tab-container {
     max-height: 200px; /* Altura máxima para el contenido de tabs */
-    overflow-y: auto; /* Scroll vertical si el contenido excede */
+    overflow-y: none; /* Scroll vertical si el contenido excede */
     padding-right: 10px; /* Espacio para evitar que el scroll tape contenido */
 }
 

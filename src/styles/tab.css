@@ -26,14 +26,24 @@
 
 /* Contenido debajo de los tabs */
 .tab-content {
-    padding: 15px;
+    padding: 5px;
+    height: 170px; 
     border: 1px solid #f8bbd0; /* Borde rosa pastel */
-    border-radius: 0 0 5px 5px; /* Bordes inferiores redondeados */
+    border-radius: 8px; /* Bordes redondeados */
     background-color: #fff; /* Fondo blanco para el contenido */
 }
 
 .custom-tab {
     font-size: 8px !important; /* Tamaño de letra reducido */
     font-weight: bold; /* Mantener el texto claro y legible */
-    text-transform: uppercase; /* Opcional: hacer el texto en mayúsculas */
+    text-transform: uppercase; 
+}
+
+.tab-text {
+    max-height: 140px; /* Altura fija para el contenido */
+    overflow-y: auto; /* Scroll vertical activado */
+    padding: 4px; /* Espaciado interno del texto */
+    line-height: 1.2; /* Espaciado entre líneas */
+    font-size: 1rem; /* Tamaño de fuente adecuado */
+    color: #333; /* Color del texto */
 }

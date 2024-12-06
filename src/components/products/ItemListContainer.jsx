@@ -4,13 +4,16 @@ import { useParams } from "react-router-dom";
 import { getCategory } from "../../database/categories";
 import { getProducts } from "../../database/products";
 import ItemDetail from './ItemDetail';
+import { useLoading } from "../../context/LoadingContext";
 
 export default function ItemListContainer() {
+    const { setLoading } = useLoading();
     const categoria = useParams().categoria;
     const [category, setCategoria] = useState([]);
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
+        setLoading(true);
         const fetchCategory = async() => {
             try{
                 let elemento;
@@ -32,13 +35,14 @@ export default function ItemListContainer() {
                 alertInfo('error', 'Función productos', 'error: ' + error);
             }
         };
+        setLoading(false);
         fetchProducts();
-    }, [categoria]);
+    }, [categoria, setLoading]);
 
     return (
         <>
             <br/>
-            <h2 className='main-title'>{category.title || 'Todos los productos.'}</h2>
+            <h2 className='main-title'>{category.title || 'Todos los productos'}</h2>
             <br/>
             <div className='container'>
                 <div className='row'>

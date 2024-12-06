@@ -1,0 +1,63 @@
+/* Contenedor principal */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la pantalla */
+    background-color: #ffe3e8; /* Fondo pastel */
+}
+
+/* Logo */
+.loading-logo {
+    width: 150px; /* Tamaño del logo */
+    margin-bottom: 20px; /* Espaciado debajo del logo */
+    animation: bounce 2s infinite; /* Animación de rebote */
+}
+
+/* Puntos de carga */
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Separación entre los puntos */
+}
+
+.dot {
+    width: 8px; /* Ancho del círculo */
+    height: 8px; /* Altura del círculo */
+    background-color: #880e4f; /* Color de los puntos */
+    border-radius: 50%; /* Hace el círculo completamente redondo */
+    animation: blink 1.5s infinite; /* Animación de parpadeo */
+}
+
+/* Animación de los puntos */
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Keyframes para el parpadeo de los puntos */
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Keyframes para el rebote del logo */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}

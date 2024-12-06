@@ -33,18 +33,17 @@ export async function getProducts(categoria) {
 
 //obtiene un producto por su id
 export async function getProduct(id) {
+    let producto = {};
     try{
         const productQuery = doc(db, 'products', id);
         const querySnapshot = await getDoc(productQuery);
         if(querySnapshot.exists()){
-            const producto = { id: querySnapshot.id, ...querySnapshot.data() };
-            return producto;
+            producto = { id: querySnapshot.id, ...querySnapshot.data() };
         }else{
             alertInfo('error', 'Obtener Producto', 'No existe el producto');
-            return null;
         }
     }catch(error){
         alertInfo('error', 'Obtener Producto', 'Error al cargar producto:' + error);
-        return null;
     }
+    return producto;
 }
