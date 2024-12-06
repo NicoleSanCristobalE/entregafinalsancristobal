@@ -54,46 +54,6 @@ Backend
     Firebase:
         Firestore: Almacenamiento de productos, categorías y órdenes.
 
-⚙️ Estructura del proyecto
-📁 src
-├── 📁 components
-│   ├── 📁 cart
-│   │   ├── CartView.jsx
-│   │   └── CartWidget.jsx
-│   ├── 📁 checkout
-│   │   └── CheckoutView.jsx
-│   ├── 📁 footer
-│   │   └── Footer.jsx
-│   ├── 📁 loading
-│   │   └── Loading.jsx
-│   │   └── Loading.css
-│   ├── 📁 menu
-│   │   ├── Brand.jsx
-│   │   └── NavBar.jsx
-│   │   └── NavBar.css
-│   ├── 📁 products
-│   │   ├── Item.jsx
-│   │   ├── ItemDetail.jsx
-│   │   ├── ItemListContainer.jsx
-│   │   ├── ProductTabs.jsx
-│   │   └── Tab.jsx
-├── 📁 context
-│   ├── CartContext.jsx
-│   └── LoadingContext.jsx
-│   └── LoadingContext.css
-├── 📁 database
-│   ├── categories.js
-│   └── orders.js
-│   └── products.js
-├── 📁 styles
-│   ├── Tab.css
-│   ├── swal.css
-│   └── CartWidget.css
-├── App.jsx
-├── App.css
-├── main.jsx
-└── index.html
-
 
 👩‍💻 Autor
 
