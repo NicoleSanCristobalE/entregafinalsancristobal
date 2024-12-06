@@ -45,7 +45,6 @@ export default function ItemListContainer() {
                     {products.map((prod) => 
                         <ItemDetail key={prod.id} product={prod} />
                     )}
-                    <br/>
                 </div>
             </div>
         </>
