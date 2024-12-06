@@ -1,3 +1,4 @@
+import './ItemListContainer.css'
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCategory } from "../../database/categories";
@@ -35,11 +36,18 @@ export default function ItemListContainer() {
     }, [categoria]);
 
     return (
-        <div className='container'>
-            <h2 className='main-title'>{category.title || 'Todos los productos'}</h2>
-            <div className='productos'>
-                {products.map((prod) => <ItemDetail product={prod} key={prod.id} />)}
+        <>
+            <br/>
+            <h2 className='main-title'>{category.title || 'Todos los productos.'}</h2>
+            <br/>
+            <div className='container'>
+                <div className='row'>
+                    {products.map((prod) => 
+                        <ItemDetail key={prod.id} product={prod} />
+                    )}
+                    <br/>
+                </div>
             </div>
-        </div>
+        </>
     );
 }

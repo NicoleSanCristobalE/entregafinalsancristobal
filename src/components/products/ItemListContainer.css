@@ -1,0 +1,10 @@
+.card-img-container {
+    height: 200px; 
+    overflow:unset; 
+}
+
+.card-img-top {
+    height: 100%;
+    object-fit:contain; 
+    width: 100%; 
+}

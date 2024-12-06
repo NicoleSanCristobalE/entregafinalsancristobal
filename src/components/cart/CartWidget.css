@@ -1,0 +1,57 @@
+/* Botón del carrito */
+.cart-button {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* Icono del carrito */
+.cart-button i {
+    font-size: 1.8rem;
+    color: #880e4f;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-button:hover i {
+    color: #d81b60;
+    transform: scale(1.1);
+}
+
+/* Contador del carrito */
+.cart-counter {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f48fb1;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border: 2px solid #ffffff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .cart-button i {
+        font-size: 1.5rem;
+    }
+
+    .cart-counter {
+        font-size: 0.75rem;
+        width: 18px;
+        height: 18px;
+    }
+}

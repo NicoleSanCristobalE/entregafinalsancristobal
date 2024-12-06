@@ -22,3 +22,15 @@ export const alertDecision = (titulo, texto) => {
         return result.isConfirmed;
     });
 };
+
+export const alertAutoDismiss = (texto, icono) => {
+    Swal.fire({
+        icon: icono, 
+        text: texto,
+        timer: 2000, 
+        timerProgressBar: true,
+        showConfirmButton: false, 
+        position: "top-end", 
+        toast: true, 
+    });
+};

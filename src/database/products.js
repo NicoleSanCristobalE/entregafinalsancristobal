@@ -1,5 +1,5 @@
 import { db } from './connection';
-import { getDocs, collection, query, where, orderBy } from 'firebase/firestore';
+import { doc, getDoc, getDocs, collection, query, where, orderBy } from 'firebase/firestore';
 import { alertInfo } from '../utils/alerts';
 
 //obtiene los productos asociados a una categoría, en caso de no existir
@@ -34,10 +34,11 @@ export async function getProducts(categoria) {
 //obtiene un producto por su id
 export async function getProduct(id) {
     try{
-        productQuery = query(collection(db, 'products'), where('id', '==', id));
+        const productQuery = doc(db, 'products', id);
         const querySnapshot = await getDoc(productQuery);
         if(querySnapshot.exists()){
-            return {id: querySnapshot.id, ...productQuery.data()};
+            const producto = { id: querySnapshot.id, ...querySnapshot.data() };
+            return producto;
         }else{
             alertInfo('error', 'Obtener Producto', 'No existe el producto');
             return null;

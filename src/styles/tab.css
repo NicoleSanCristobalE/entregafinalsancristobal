@@ -1,0 +1,39 @@
+/* Personalizar las pestañas */
+.nav-tabs {
+    margin-bottom: 0; /* Sin espacio adicional debajo */
+    border-bottom: 2px solid #f8bbd0; /* Línea separadora rosa pastel */
+}
+
+.nav-tabs .nav-link {
+    color: #880e4f; /* Texto en tono vino */
+    font-weight: bold;
+    border-radius: 5px 5px 0 0; /* Bordes superiores redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Pestaña activa */
+.nav-tabs .nav-link.active {
+    background-color: #fce4ec; /* Fondo rosa pastel */
+    color: #880e4f; /* Texto en tono vino */
+    border-color: #fce4ec #fce4ec #ffffff; /* Mantener bordes visibles solo arriba */
+}
+
+/* Hover en pestañas */
+.nav-tabs .nav-link:hover {
+    background-color: rgba(240, 98, 146, 0.1); /* Fondo rosado suave */
+    color: #880e4f;
+}
+
+/* Contenido debajo de los tabs */
+.tab-content {
+    padding: 15px;
+    border: 1px solid #f8bbd0; /* Borde rosa pastel */
+    border-radius: 0 0 5px 5px; /* Bordes inferiores redondeados */
+    background-color: #fff; /* Fondo blanco para el contenido */
+}
+
+.custom-tab {
+    font-size: 8px !important; /* Tamaño de letra reducido */
+    font-weight: bold; /* Mantener el texto claro y legible */
+    text-transform: uppercase; /* Opcional: hacer el texto en mayúsculas */
+}

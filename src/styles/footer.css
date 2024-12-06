@@ -1,0 +1,27 @@
+/* footer.css */
+
+/* General del footer */
+.footer {
+    background-color: #343a40; /* Color oscuro */
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+}
+
+/* Estilo de los íconos sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.5rem;
+}
+
+/* Estilo de los enlaces */
+.social-link {
+    color: #ffffff; /* Blanco por defecto */
+    transition: color 0.3s ease-in-out;
+}
+
+.social-link:hover {
+    color: #0d6efd; /* Azul claro al pasar el cursor */
+    text-decoration: none;
+}

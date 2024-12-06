@@ -1,0 +1,128 @@
+/* Estilo general del navbar */
+.navbar {
+    background-color: #ffc1e3; /* Fondo rosa pastel */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    border-radius: 8px; /* Bordes redondeados */
+    min-height: 70px; /* Altura mínima para garantizar consistencia */
+    height: auto; /* Permitir expansión en pantallas pequeñas si es necesario */
+    transition: all 0.3s ease; /* Suaviza los cambios bruscos de tamaño */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separación entre elementos */
+}
+
+/* Efecto de hover en el Brand */
+.navbar-brand img {
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* Contenedor de los botones */
+.navbar .navbar-nav {
+    display: flex; /* Configura el contenedor como flexbox */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Centra los botones verticalmente */
+    gap: 10px; /* Añade separación entre los botones */
+    flex-wrap: wrap; /* Permite que los botones se ajusten en múltiples líneas si es necesario */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    padding: 0; /* Elimina padding extra */
+    margin: 0; /* Elimina márgenes */
+}
+
+/* Botones de las categorías */
+.navbar .nav-link {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #880e4f; /* Texto en tono vino */
+    font-weight: bold;
+    border: 1px solid #f8bbd0; /* Borde rosa claro */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 8px 15px; /* Espaciado interno */
+    text-decoration: none; /* Eliminar subrayado */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Efectos suaves */
+}
+
+/* Hover en botones */
+.navbar .nav-link:hover {
+    background-color: #880e4f; /* Fondo tono vino */
+    color: #ffffff; /* Texto blanco */
+    transform: translateY(-2px); /* Movimiento sutil hacia arriba */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+
+/* Botón del carrito */
+.cart-icon {
+    font-size: 1.5rem; /* Tamaño del icono */
+    color: #880e4f; /* Tono vino */
+    position: relative; /* Para posicionar el contador */
+    transition: transform 0.3s ease, color 0.3s ease; /* Animaciones suaves */
+}
+
+.cart-icon:hover {
+    color: #d81b60; /* Rosa brillante al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* Contador del carrito */
+.cart-counter {
+    position: absolute;
+    top: -5px; /* Ajusta la posición vertical */
+    right: -10px; /* Ajusta la posición horizontal */
+    background-color: #f48fb1; /* Fondo rosa pastel */
+    color: white; /* Texto blanco */
+    font-size: 0.8rem; /* Tamaño del texto */
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center; /* Centrar el número verticalmente */
+    justify-content: center; /* Centrar el número horizontalmente */
+    border-radius: 50%; /* Forma circular */
+    border: 2px solid #ffffff; /* Borde blanco */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+/* Botón de colapso en pantallas pequeñas */
+.navbar-toggler {
+    background-color: #ffffff; /* Fondo blanco */
+    border: none; /* Sin bordes */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animaciones suaves */
+}
+
+.navbar-toggler:hover {
+    background-color: #f8bbd0; /* Fondo rosa claro */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* Transición suave para el colapso del menú */
+.navbar-collapse {
+    transition: height 0.3s ease; /* Suaviza el colapso y expansión */
+    overflow: hidden; /* Evitar desbordes visuales */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px; /* Ajustar espaciado en pantallas pequeñas */
+    }
+
+    .navbar .nav-link {
+        font-size: 0.9rem; /* Reducir tamaño de fuente */
+        padding: 6px 12px;
+    }
+
+    .cart-icon {
+        font-size: 1.3rem; /* Reducir tamaño del icono */
+    }
+
+    .cart-counter {
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem; /* Reducir tamaño del contador */
+    }
+}

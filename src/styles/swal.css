@@ -1,0 +1,15 @@
+/* Personalizar el estilo de la alerta */
+.custom-alert {
+    background-color: #e8f5e9; /* Verde pálido */
+    color: #2e7d32; /* Texto verde oscuro */
+    font-size: 2px; /* Texto pequeño */
+    padding: 8px 15px; /* Espaciado reducido */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    min-width: 200px; /* Ancho mínimo */
+}
+
+/* Barra de progreso dentro de la alerta */
+.swal2-timer-progress-bar {
+    background-color: #66bb6a; /* Verde más intenso */
+}

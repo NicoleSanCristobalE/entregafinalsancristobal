@@ -40,3 +40,25 @@
 .read-the-docs {
   color: #888;
 }
+/* Destacar la fila seleccionada */
+.table-hover tbody tr:hover {
+  background-color: rgba(240, 98, 146, 0.1); /* Fondo rosado suave */
+}
+
+/* Ícono de basura más atractivo */
+.btn-outline-danger i {
+  color: #d32f2f; /* Rojo oscuro */
+  transition: color 0.3s ease;
+}
+
+.btn-outline-danger:hover i {
+  color: #b71c1c; /* Rojo más oscuro en hover */
+}
+
+/* Resaltado del total */
+.text-primary {
+  color: #880e4f !important; /* Tono vino */
+}
+body {
+  background-color: #ffe3e8;
+}

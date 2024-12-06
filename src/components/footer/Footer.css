@@ -1,0 +1,41 @@
+/* Estilos generales del footer */
+.footer {
+    background: #fce4ec; /* Fondo rosa pastel */
+    color: #880e4f; /* Texto en tono vino */
+    padding: 20px 0;
+    border-top: 2px solid #880e4f; /* Línea superior */
+}
+
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Redes sociales */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    color: #880e4f; /* Tono vino */
+    font-size: 1.5rem; /* Tamaño del icono */
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #d81b60; /* Tono rosado más brillante */
+}
+
+/* Alineación entre texto y redes sociales */
+.d-flex.align-items-center .footer-title {
+    font-size: 1rem; /* Tamaño del texto "Síguenos en" */
+    margin-bottom: 0; /* Quita espacio extra */
+    display: inline-block;
+    vertical-align: middle; /* Alineación con los íconos */
+}
