@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "insertChampus": "node src/database/insertChampus.js",
+    "insertAceites": "node src/database/insertAceites.js",
+    "insertAcondicionadores": "node src/database/insertAcondicionadores.js",
+    "insertCremas": "node src/database/insertCremas.js",
+    "insertMascarillas": "node src/database/insertMascarillas.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.1",
