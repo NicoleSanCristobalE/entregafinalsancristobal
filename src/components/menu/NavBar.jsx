@@ -53,7 +53,7 @@ export default function NavBar() {
                                     key={category.id}
                                     to={`/category/${category.name.toLowerCase()}`}
                                     className='nav-link'>
-                                    {category.name}
+                                    {category.title}
                                 </Link>
                             </li>
                         ))}

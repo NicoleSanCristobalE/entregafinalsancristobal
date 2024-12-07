@@ -7,7 +7,7 @@ export default function ProductTabs({ description, features, ingredients }) {
         <div>
             <ul className="nav nav-tabs" id="productTabs" role="tablist">
                 <Tab id="description" label="Descripción" active={true} />
-                <Tab id="features" label="Características" />
+                {/* <Tab id="features" label="Características" /> */}
                 <Tab id="ingredients" label="Ingredientes" />
             </ul>
             <div className="tab-content mt-3" id="productTabsContent">
@@ -20,7 +20,7 @@ export default function ProductTabs({ description, features, ingredients }) {
                         <p>{description || "Sin descripción disponible."}</p>
                     </div>
                 </div>
-                <div
+                {/* <div
                     className="tab-pane fade"
                     id="features"
                     role="tabpanel"
@@ -28,7 +28,7 @@ export default function ProductTabs({ description, features, ingredients }) {
                     <div className="tab-text">
                         <p>{features || "Sin características disponibles."}</p>
                     </div>
-                </div>
+                </div> */}
                 <div
                     className="tab-pane fade"
                     id="ingredients"

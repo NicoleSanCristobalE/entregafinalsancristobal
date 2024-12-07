@@ -10,7 +10,9 @@ export function formatPrice(price) {
 
 export function getProductImage (image) {
     try {
-        return require(`../../${image}`);
+        const path = `${image}`;
+        console.log(path);
+        return require(`/images/${image}`);
     } catch {
         return "/images/sinimagen.png";
     }
