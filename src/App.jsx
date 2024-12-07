@@ -12,49 +12,22 @@ import Loading from "./components/loading/Loading";
 import { useLoading } from './context/LoadingContext';
 
 function App() {
-//     const { loading, setLoading } = useLoading();
-//     const handleLoad = () => setLoading(false); 
-//     setLoading(true); 
-//     window.addEventListener("load", handleLoad); 
-//     return () => window.removeEventListener("load", handleLoad); 
-return (
-//     <>
-//         {loading ? (
-//             <Loading /> // Muestra el componente Loading mientras loading es true
-//         ) : (
-            <>
-                <BrowserRouter>
-                    <NavBar />
-                    <Routes>
-                        <Route exact path="/" element={<ItemListContainer />} />
-                        <Route exact path="/category/:categoria" element={<ItemListContainer />} />
-                        <Route exact path="/item/:id" element={<Item />} />
-                        <Route exact path="/cart" element={<CartView />} />
-                        <Route exact path="/checkout" element={<CheckoutView />} />
-                    </Routes>
-                </BrowserRouter>
-                <br/><br/>
-                <Footer />
-            </>
-    //     )}
-    // </>
-);
-  // return (
-  //     <>
-  //       <BrowserRouter>
-  //         <NavBar/>
-  //         <Routes>
-  //             <Route exact path="/" element={<ItemListContainer/>}/>
-  //             <Route exact path="/category/:categoria" element={<ItemListContainer/>}/>
-  //             <Route exact path="/item/:id" element={<Item/>}/>
-  //             <Route exact path="/cart" element={<CartView />} />
-  //             <Route exact path="/checkout" element={<CheckoutView />} />
-  //         </Routes>
-  //       </BrowserRouter>
-  //       <br/><br/>
-  //       <Footer />
-  //   </>
-  // );
+    return (
+        <>
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route exact path="/" element={<ItemListContainer />} />
+                    <Route exact path="/category/:categoria" element={<ItemListContainer />} />
+                    <Route exact path="/item/:id" element={<Item />} />
+                    <Route exact path="/cart" element={<CartView />} />
+                    <Route exact path="/checkout" element={<CheckoutView />} />
+                </Routes>
+            </BrowserRouter>
+            <br/><br/>
+            <Footer />
+        </>
+    );
 }
 
 export default App

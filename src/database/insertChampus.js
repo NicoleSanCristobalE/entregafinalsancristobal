@@ -190,7 +190,7 @@ const uploadChampus = async () => {
       for (let i = 0; i < products.length; i++) {
         const product = products[i];
         const name = `${product.category}${i + 1}`;
-        const image = `../../public/images/${product.category}${i + 1}.png`;
+        const image = `/images/${name}.png`;
         const productData = {
           ...product,
           image,

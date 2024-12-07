@@ -8,12 +8,16 @@ export function formatPrice(price) {
     }
 };
 
-export function getProductImage (image) {
+export async function getProductImage(image) {
+    const defaultImage = "/images/sinimagen.png";
     try {
-        const path = `${image}`;
-        console.log(path);
-        return require(`/images/${image}`);
-    } catch {
-        return "/images/sinimagen.png";
+        const response = await fetch(`/images/${image}`);
+        if (response.ok) {
+            return `/images/${image}`;
+        } else {
+            return defaultImage;
+        }
+    } catch (error) {
+        return defaultImage;
     }
-};
+}
