@@ -11,14 +11,14 @@
 /* Imagen dentro del contenedor */
 .item-card img {
     max-height: 300px;
-    object-fit: contain; /* Mantiene proporciones y evita recortes */
+    object-fit: contain; 
 }
 
 /* Contenedor de tabs con scroll */
 .tab-container {
-    max-height: 200px; /* Altura máxima para el contenido de tabs */
-    overflow-y: none; /* Scroll vertical si el contenido excede */
-    padding-right: 10px; /* Espacio para evitar que el scroll tape contenido */
+    max-height: 200px; 
+    overflow-y: none; 
+    padding-right: 10px; 
 }
 
 /* Scrollbar personalizado (opcional) */

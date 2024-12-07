@@ -54,7 +54,6 @@ Backend
     Firebase:
         Firestore: Almacenamiento de productos, categorías y órdenes.
 
-
 👩‍💻 Autor
 
 Este proyecto fue desarrollado como proyecto final de Curso React de Coderhouse

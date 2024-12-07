@@ -1,0 +1,5 @@
+.small-alert {
+    font-size: 12px; /* Tamaño de fuente pequeño */
+    padding: 10px;   /* Reduce el padding interno */
+    line-height: 1.2; /* Altura de línea compacta */
+}

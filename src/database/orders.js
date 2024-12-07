@@ -1,13 +1,16 @@
 import { db } from './connection';
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
-export async function saveOrder(compra){
+export const saveOrder = async (order) => {
     try {
-        const db = getFirestore();
         const ordersCollection = collection(db, "orders");
-        const docRef = await addDoc(ordersCollection, compra);
-        setOrderId(docRef.id);
-        clearCart();
+        const docRef = await addDoc(ordersCollection, {
+            ...order,
+            date: serverTimestamp(),
+        });
+        return docRef.id;
     } catch (error) {
-        console.error("Error al crear la orden:", error);
+        alertInfo('error', 'Guardar orden de compra', 'Error al intentar guardar:' + error);
+        return null;
     }
-}
+};

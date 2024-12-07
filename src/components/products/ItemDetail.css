@@ -1,0 +1,30 @@
+/* Estilos del card */
+.item-card {
+    border: 2px solid #ffc1e3;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer como botón */
+.item-card-footer {
+    background-color: #ffc1e3;
+    padding: 10px;
+    border-top: 2px solid #f8bbd0;
+    text-align: center;
+    color: #880e4f;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 0 0 10px 10px;
+}
+
+.item-card-footer:hover {
+    background-color: #880e4f;
+    color: #ffffff;
+}

@@ -1,115 +1,88 @@
-import "./../../styles/swal.css"
-import './Item.css'
-import { useState, useCallback, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import "./../../styles/swal.css";
+import "./Item.css";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { getProduct } from "../../database/products";
-import { formatPrice, getProductImage } from '../../utils/functions';
-import { alertAutoDismiss } from '../../utils/alerts';
-import { useCartContext } from "../../context/CartContext";
+import { formatPrice, getProductImage } from "../../utils/functions";
+import { alertAutoDismiss } from "../../utils/alerts";
 import { useLoading } from "../../context/LoadingContext";
+import { useCartContext } from "../../context/CartContext";
 import ProductTabs from "./ProductTabs";
+import ItemQuantitySelector from "./ItemQuantitySelector";
 
-export default function Item({}) {
+
+export default function Item() {
     const { id } = useParams();
-    const { loading, setLoading } = useLoading();
     const { addToCart } = useCartContext();
+    const { setLoading } = useLoading();
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
-    
-    useEffect(() => {
-        const fetchProduct = async() => {
-            try{
+
+    useEffect(() => { 
+        console.log('desa');
+        const fetchProduct = async () => {
+            setLoading(true); // Activar el loading al iniciar la carga
+            try {
                 const producto = await getProduct(id);
-                console.log(producto);
                 setProduct(producto);
-            }catch(error){
-                alertInfo('error', 'Función producto', 'error: ' + error);
+            } catch (error) {
+                alertAutoDismiss("Error al cargar el producto: " + error, "error");
+            } finally {
+                setLoading(false); // Desactivar el loading cuando finalice la carga
             }
         };
-        console.log('loading: ' + loading);;
-        fetchProduct().then(() => setLoading(false));
-    }, []);
-   
-    if (!product) {
-        return <h2>Producto no encontrado</h2>;
-    }
-
-    const handleIncrement = () => {
-        if (quantity < product.stock) {
-            setQuantity(quantity + 1);
-        }
-    };
-
-    const handleDecrement = () => {
-        if (quantity > 1) {
-            setQuantity(quantity - 1);
-        }
-    };
+        fetchProduct();
+    }, [id, setLoading]);
 
     const handleAddToCart = () => {
         addToCart(product, quantity);
-        alertAutoDismiss(`${product.title} ha sido añadido al carrito.`);
+        alertAutoDismiss(`${product.title} ha sido añadido al carrito.`, "success");
     };
-    
-    return (
-        <div className="container mt-5">
-            <div className="card mx-auto item-card">
-                <div className="row g-1">
-                    {/* Contenedor de imagen centrada */}
-                    <div className="col-md-4 d-flex align-items-center justify-content-center">
-                        <img
-                            src={getProductImage(product.image)}
-                            alt={product.name}
-                            className="img-fluid"
-                            style={{ maxHeight: "300px", objectFit: "contain" }}
-                        />
-                    </div>
 
-                    {/* Contenido del producto */}
-                    <div className="col-md-8 d-flex flex-column">
-                        <div className="card-body flex-grow-1">
-                            <h2 className="card-title">{product.title}</h2>
-                            <p className="card-text" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
-                                Precio: ${formatPrice(product.price)}
-                            </p>
-                            {/* Tabs con scroll en contenido */}
-                            <div className="tab-container">
-                                <ProductTabs
-                                    description={product.description}
-                                    features={product.features}
-                                    ingredients={product.ingredients}/>
-                            </div>
+    if (!product) {
+        return <h2>Producto no encontrado</h2>;
+    }
+    console.log('antes de if, product: ' + product);
+        return (
+            <div className="container mt-5">
+                <div className="card mx-auto item-card">
+                    <div className="row g-1">
+                        <div className="col-md-4 d-flex align-items-center justify-content-center">
+                            <img
+                                src={getProductImage(product.image)}
+                                alt={product.name}
+                                className="img-fluid"
+                                style={{ maxHeight: "300px", objectFit: "contain" }}/>
                         </div>
-
-                        {/* Botones al final */}
-                        <div className="mt-auto">
+                        <div className="col-md-8 d-flex flex-column">
+                            <div className="card-body flex-grow-1">
+                                <h2 className="card-title">{product.title}</h2>
+                                <p className="card-text" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+                                    Precio: ${formatPrice(product.price)}
+                                </p>
+                                <div className="tab-container">
+                                    <ProductTabs
+                                        description={product.description}
+                                        features={product.features}
+                                        ingredients={product.ingredients}/>
+                                </div>
+                            </div>
                             <br/>
-                            {/* <p className="card-text"> */}
-                                <h6 className="card-text">Stock disponible: {product.stock}</h6>
-                            {/* </p> */}
-                            <div className="d-flex justify-content-center mb-2">
+                            <div className="mt-auto">
+                                <h5 className="card-text">Stock disponible: {product.stock}</h5>
+                                <ItemQuantitySelector
+                                    product={product}
+                                    quantity={quantity}
+                                    onQuantityChange={setQuantity}/>
                                 <button
-                                    className="btn btn-sm btn-secondary"
-                                    onClick={handleDecrement}
-                                    style={{ width: "35px", height: "35px" }}>
-                                    -
-                                </button>
-                                <span className="mx-3 fs-5">{quantity}</span>
-                                <button
-                                    className="btn btn-sm btn-secondary"
-                                    onClick={handleIncrement}
-                                    style={{ width: "35px", height: "35px" }}>
-                                    +
+                                    className="btn btn-primary w-100 btn-sm mt-2"
+                                    onClick={handleAddToCart}>
+                                    Agregar al carrito
                                 </button>
                             </div>
-                            <button className="btn btn-primary w-100 btn-sm" onClick={handleAddToCart}>
-                                Agregar al carrito
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <br/><br/><br/>
-        </div>
-    );
+        );
 }

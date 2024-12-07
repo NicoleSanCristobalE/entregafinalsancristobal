@@ -1,4 +1,5 @@
 import './App.css'
+import "./styles/styles.css"; 
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/menu/NavBar'
@@ -11,12 +12,16 @@ import Loading from "./components/loading/Loading";
 import { useLoading } from './context/LoadingContext';
 
 function App() {
-  const { loading } = useLoading();
-  return (
-    <>
-        {loading ? (
-            <Loading /> // Muestra el componente Loading mientras loading es true
-        ) : (
+//     const { loading, setLoading } = useLoading();
+//     const handleLoad = () => setLoading(false); 
+//     setLoading(true); 
+//     window.addEventListener("load", handleLoad); 
+//     return () => window.removeEventListener("load", handleLoad); 
+return (
+//     <>
+//         {loading ? (
+//             <Loading /> // Muestra el componente Loading mientras loading es true
+//         ) : (
             <>
                 <BrowserRouter>
                     <NavBar />
@@ -31,8 +36,8 @@ function App() {
                 <br/><br/>
                 <Footer />
             </>
-        )}
-    </>
+    //     )}
+    // </>
 );
   // return (
   //     <>

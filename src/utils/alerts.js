@@ -30,7 +30,10 @@ export const alertAutoDismiss = (texto) => {
         timerProgressBar: true,
         showConfirmButton: false, 
         position: "top-end", 
-        width: 20,
+        width: "300px",
         toast: true, 
+        customClass: {
+            popup: 'small-alert',
+        },
     });
 };

@@ -6,3 +6,13 @@
 .table td {
     vertical-align: middle;
 }
+.table-fixed th,
+.table-fixed td {
+    width: 150px; 
+    text-align: center;  
+    white-space: nowrap;  
+}
+
+.table-fixed .product-column {
+    width: auto;  
+}

@@ -9,7 +9,7 @@ export default function Footer() {
                     {/* Información de la empresa */}
                     <div className="col-md-6 text-center text-md-start">
                         <h5 className="footer-title">Tienda Lulú</h5>
-                        <p className="footer-text">Ofrecemos productos de calidad a precios increíbles. ¡Gracias por visitarnos!</p>
+                        <p className="footer-text">Ofrecemos productos capilares de calidad a precios increíbles. ¡Gracias por visitarnos!</p>
                     </div>
 
                     {/* Redes sociales */}
