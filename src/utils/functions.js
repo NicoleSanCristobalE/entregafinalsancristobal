@@ -8,16 +8,31 @@ export function formatPrice(price) {
     }
 };
 
-export async function getProductImage(image) {
-    const defaultImage = "/images/sinimagen.png";
+
+export function getProductImage (image) {
     try {
-        const response = await fetch(`/images/${image}`);
+        console.log((`${image}`));
+        if((`${image}`).size){
+            console.log('ingrese');
+        }
+        return require(`../../${image}`);
+    } catch {
+        return "/images/sinimagen.png";
+    }
+};
+
+
+export const getImagePath = async (fileName) => {
+    const basePath = '/images/';
+    const defaultImage = `${basePath}sinimagen.png`;
+    try {
+        const response = await fetch(`${basePath}${fileName}`, { method: 'HEAD' });
         if (response.ok) {
-            return `/images/${image}`;
-        } else {
+            return `${basePath}${fileName}`;
+        }else {
             return defaultImage;
         }
     } catch (error) {
-        return defaultImage;
+      return defaultImage;
     }
-}
+};

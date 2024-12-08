@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCategory } from "../../database/categories";
 import { getProducts } from "../../database/products";
-import ItemDetail from './ItemDetail';
 import { useLoading } from "../../context/LoadingContext";
+import ItemDetail from './ItemDetail';
 
 export default function ItemListContainer() {
     const { setLoading } = useLoading();

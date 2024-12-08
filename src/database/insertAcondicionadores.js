@@ -145,7 +145,7 @@ const uploadAcondicionador = async () => {
       for (let i = 0; i < products.length; i++) {
         const product = products[i];
         const name = `${product.category}${i + 1}`;
-        const image = `/images/${name}.png`;
+        const image = `${name}.png`;
         const productData = {
           ...product,
           image,

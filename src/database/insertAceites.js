@@ -1,12 +1,6 @@
 import { db } from './connection.js';
 import { collection, addDoc } from 'firebase/firestore';
 
-    // "insertChampus": "node src/database/insertChampus.js",
-    // "insertAceites": "node src/database/insertAceites.js",
-    // "insertAcondicionadores": "node src/database/insertAcondicionadores.js",
-    // "insertCremas": "node src/database/insertCremas.js",
-    // "insertMascarillas": "node src/database/insertMascarillas.js",
-    
 const products = [
   //aceites
   {
@@ -124,7 +118,7 @@ const uploadProducts = async () => {
       for (let i = 0; i < products.length; i++) {
         const product = products[i];
         const name = `${product.category}${i + 1}`;
-        const image = `/images/${name}.png`;
+        const image = `${name}.png`;
         const productData = {
           ...product,
           image,

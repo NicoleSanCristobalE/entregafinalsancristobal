@@ -7,6 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "insertChampus": "node src/database/insertChampus.js",
+    "insertAceites": "node src/database/insertAceites.js",
+    "insertAcondicionadores": "node src/database/insertAcondicionadores.js",
+    "insertCremas": "node src/database/insertCremas.js",
+    "insertMascarillas": "node src/database/insertMascarillas.js",
     "preview": "vite preview"
   },
   "dependencies": {

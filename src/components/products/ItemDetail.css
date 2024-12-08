@@ -1,8 +1,25 @@
 /* Estilos del card */
 .item-card {
     border: 2px solid #ffc1e3;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 5px; 
+}
+
+/* Ajustes opcionales para el título */
+.card-title {
+    margin-bottom: 0; /* Elimina cualquier margen inferior por defecto */
+    font-size: 18px; /* Tamaño ajustado */
+}
+
+/* Ajustes para el precio */
+.card-price {
+    margin: 0; /* Sin márgenes adicionales */
+    font-size: 16px; /* Ajusta el tamaño según necesites */
+    color: #880e4f;; /* Color opcional */
 }
 
 .item-card:hover {

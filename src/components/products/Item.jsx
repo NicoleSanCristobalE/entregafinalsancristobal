@@ -3,7 +3,7 @@ import "./Item.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProduct } from "../../database/products";
-import { formatPrice, getProductImage } from "../../utils/functions";
+import { formatPrice, getImagePath } from "../../utils/functions";
 import { alertAutoDismiss } from "../../utils/alerts";
 import { useLoading } from "../../context/LoadingContext";
 import { useCartContext } from "../../context/CartContext";
@@ -17,9 +17,9 @@ export default function Item() {
     const { setLoading } = useLoading();
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
+    const [imagePath, setImagePath] = useState('');
 
     useEffect(() => { 
-        console.log('desa');
         const fetchProduct = async () => {
             setLoading(true); // Activar el loading al iniciar la carga
             try {
@@ -27,13 +27,23 @@ export default function Item() {
                 setProduct(producto);
             } catch (error) {
                 alertAutoDismiss("Error al cargar el producto: " + error, "error");
-            } finally {
-                setLoading(false); // Desactivar el loading cuando finalice la carga
-            }
+            } 
         };
         fetchProduct();
     }, [id, setLoading]);
 
+    useEffect(() => {
+        if (!product || !product.image) return; 
+        const fetchImage = async () => {
+          try {
+            const path = await getImagePath(product.image);
+            setImagePath(path);
+          } catch (error) {
+            alertAutoDismiss("Error al cargar la imagen: " + error, "error");
+          }
+        };
+        fetchImage();
+      }, [product, getImagePath, alertAutoDismiss]);
     const handleAddToCart = () => {
         addToCart(product, quantity);
         alertAutoDismiss(`${product.title} ha sido añadido al carrito.`, "success");
@@ -42,14 +52,13 @@ export default function Item() {
     if (!product) {
         return <h2>Producto no encontrado</h2>;
     }
-    console.log('antes de if, product: ' + product);
         return (
             <div className="container mt-5">
                 <div className="card mx-auto item-card">
                     <div className="row g-1">
                         <div className="col-md-4 d-flex align-items-center justify-content-center">
                             <img
-                                src={getProductImage(product.image)}
+                                src={imagePath}
                                 alt={product.name}
                                 className="img-fluid"
                                 style={{ maxHeight: "300px", objectFit: "contain" }}/>

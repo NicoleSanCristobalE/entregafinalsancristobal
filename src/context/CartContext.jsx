@@ -1,15 +1,15 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 // Crear el contexto del carrito
 const CartContext = createContext();
-
+const carritoInicial = JSON.parse(localStorage.getItem("cart")) || [];
 // Hook para usar el contexto
 export const useCartContext = () => useContext(CartContext);
 
 // Proveedor del contexto
 export default function CartProvider({ children }) {
-    const [cart, setCart] = useState([]);
-
+    const [cart, setCart] = useState(carritoInicial);
+    
     // Total de items en el carrito
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
@@ -52,6 +52,10 @@ export default function CartProvider({ children }) {
         setCart([]);
     };
 
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart])
+
     // Valor que se comparte en el contexto
     const value = {
         cart,
@@ -61,7 +65,7 @@ export default function CartProvider({ children }) {
         removeFromCart,
         clearCart,
     };
-
+    
     // Proveer el contexto
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
