@@ -65,10 +65,10 @@ export default function Item() {
                         </div>
                         <div className="col-md-8 d-flex flex-column">
                             <div className="card-body flex-grow-1">
-                                <h2 className="card-title">{product.title}</h2>
-                                <p className="card-text" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+                                <h1 className="card-title" style={{ fontSize: '35px' }}>{product.title}</h1>
+                                <h6 className="card-text" style={{ color: '#880e4f' }}>
                                     Precio: ${formatPrice(product.price)}
-                                </p>
+                                </h6>
                                 <div className="tab-container">
                                     <ProductTabs
                                         description={product.description}
