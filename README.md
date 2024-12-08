@@ -1,6 +1,7 @@
 🛍️ Tienda Lulú - E-commerce App
 
-Tienda Lulú es una aplicación de e-commerce desarrollada en React, que permite a los usuarios navegar por categorías de productos, ver detalles, gestionar un carrito de compras y realizar pedidos de manera intuitiva. La aplicación utiliza Firebase como backend para la gestión de datos.
+Tienda Lulú es una tienda de productos capilares. 
+Se crea aplicación de e-commerce especializada desarrollada en React, que permite a los usuarios navegar por categorías de productos, ver detalles, gestionar un carrito de compras y realizar pedidos de manera intuitiva. La aplicación utiliza Firebase como backend para la gestión de datos.
 
 🌟 Características implementadas
 Navegación y estructura
