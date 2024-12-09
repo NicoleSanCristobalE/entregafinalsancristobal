@@ -50,6 +50,8 @@ Frontend
         React Router DOM para rutas dinámicas.
     Bootstrap para estilos y diseño responsivo.
     FontAwesome y Bootstrap Icons para iconografía.
+    SweetAlert2 para notificaciones de errores y de que producto fue agregado al carrito.
+    En codigo se encuentra loading, pero no pude implementarlo, quedo el codigo pero no funcional.
 
 Backend
     Firebase:
@@ -59,6 +61,9 @@ Backend
 
 Este proyecto fue desarrollado como proyecto final de Curso React de Coderhouse
 
+No pude realizar la grabación del sitio, pero pude realizar tardiamente la publicación de este
+
+https://courageous-moxie-9b46eb.netlify.app/
 
 Nicole San Cristóbal Escobar
 GitHub: NicoleSanCristobalE
